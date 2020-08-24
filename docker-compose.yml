@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+    wiremock:
+        build: ./wmock
+        command: --port 8080
+        ports: 
+            - "8080:8080"
+    crypto:
+        build: ./crypto
+        image: crypto
+        ports:
+            - "3000:3000"
