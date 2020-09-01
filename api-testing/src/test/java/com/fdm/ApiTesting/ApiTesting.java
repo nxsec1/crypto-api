@@ -1,15 +1,23 @@
 package com.fdm.ApiTesting;
 
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 
+import java.util.List;
 
 import static io.restassured.RestAssured.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.Matchers.*;
 
 public class ApiTesting
 {
     private static final String BASE_URI = "http://localhost:3000";
+    private static final String INVALID_COIN = "bitcoi";
+    private static final String USD = "usd";
+    private static final String LIMIT = "10";
+    private static final String PAGE = "1";
 
     @BeforeAll
     public void init() {
