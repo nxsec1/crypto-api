@@ -17,7 +17,7 @@ import com.fdm.CryptoCurrency.api.CurrencyDetail;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
 
-@RestController
+//@RestController
 public class CoinRestController {
 	private CoinService coinService;
 	
