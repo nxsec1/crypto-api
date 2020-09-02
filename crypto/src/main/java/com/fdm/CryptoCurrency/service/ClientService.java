@@ -88,6 +88,11 @@ public class ClientService {
 		for (int i = 0; i < ccs.size(); i++) {
 			CryptoCurrency cc = ccs.get(i);
 			Map<String, List<StatusUpdate>> updates = client.findStatusUpdate(cc.getId());
+			List<StatusUpdate> data = updates.get("status_updates");
+			for (int j = 0; j < data.size(); j++) {
+				StatusUpdate update = data.get(j);
+				update.setCreated_at(formatDate(update.getCreated_at().substring(0,10)));
+			}
 			cc.setStatusUpdates(updates.get("status_updates"));
 		}
 		return ccs;
