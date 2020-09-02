@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fdm.CryptoCurrency.api.CryptoCurrency;
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
 import com.fdm.CryptoCurrency.client.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.client.CryptoFeignClient;
@@ -55,7 +56,6 @@ public class ClientService {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime then = now.minusDays(7);
 		String date = String.format(then.format(format));
-		System.out.println(date);
 		
 		CryptoHistoryDTO historyDto = client.findHistory(id,date);
 		Map<String, Object> historyData = historyDto.getMarket_data();
@@ -81,6 +81,15 @@ public class ClientService {
 		String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 		return formattedDate;
 	}
+
+	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 
 
 }
