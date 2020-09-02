@@ -51,20 +51,20 @@ public class ControllerTest {
 	public void that_getAll_returns_all() throws NotFoundCurrencyException, NotFoundPageException {
 		ArrayList<CryptoCurrency> mockCCs = new ArrayList<CryptoCurrency>();
 		mockCCs.add(mockCC);
-		when(coinService.getAll("usd","1")).thenReturn(mockCCs);
-		ArrayList<CryptoCurrency> cryptoCurrencys = coinRestController.getAll("usd","1");
+		when(coinService.getAll("usd","10","1")).thenReturn(mockCCs);
+		ArrayList<CryptoCurrency> cryptoCurrencys = coinRestController.getAll("usd","10","1");
 		assertEquals(cryptoCurrencys,mockCCs);
 	}
 	
 	@Test(expected = NotFoundCurrencyException.class)
 	public void that_getAll_notFoundCurrency() throws NotFoundCurrencyException, NotFoundPageException {
-		coinRestController.getAll("abc","1");
+		coinRestController.getAll("abc","10","1");
 		
 	}
 	
 	@Test(expected = NotFoundPageException.class)
 	public void that_getAll_notFoundPage() throws Exception {
-		coinRestController.getAll("aud","11");
+		coinRestController.getAll("aud","10","11");
 
 	}
 	

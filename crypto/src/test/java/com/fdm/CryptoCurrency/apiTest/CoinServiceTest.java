@@ -10,16 +10,18 @@ import org.junit.Test;
 
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
 import com.fdm.CryptoCurrency.client.CryptoCurrency;
+import com.fdm.CryptoCurrency.client.CryptoFeignClient;
 import com.fdm.CryptoCurrency.service.ClientService;
 
 
 public class CoinServiceTest {
 	
+	private static CryptoFeignClient client;
 	private static ClientService coinService;
 	
 	@BeforeClass
 	public static void init() {
-		coinService = new ClientService();
+		coinService = new ClientService(client);
 	}
 	
 	
@@ -41,7 +43,7 @@ public class CoinServiceTest {
 	
 	@Test
 	public void test_getAll_returns_ccs() {
-		ArrayList<CryptoCurrency> cryptoCurrencys = coinService.getAll("aud","1");
+		ArrayList<CryptoCurrency> cryptoCurrencys = coinService.getAll("aud","10","1");
 		CryptoCurrency cc = cryptoCurrencys.get(0);
 		assertEquals("bitcoin",cc.getId());
 		assertNotNull(cc.getCurrent_price());
