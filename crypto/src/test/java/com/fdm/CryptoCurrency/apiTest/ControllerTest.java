@@ -16,12 +16,12 @@ import com.fdm.CryptoCurrency.api.CurrencyDetail;
 import com.fdm.CryptoCurrency.controllers.CoinRestController;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
-import com.fdm.CryptoCurrency.service.CoinService;
+import com.fdm.CryptoCurrency.service.ClientService;
 
 public class ControllerTest {
 	
 	
-	private CoinService coinService;
+	private ClientService coinService;
 	private CurrencyDetail mockCD;
 	private CryptoCurrency mockCC;
 	private CoinRestController coinRestController;
@@ -29,7 +29,7 @@ public class ControllerTest {
 	
 	@Before
 	public void setUp() throws Exception{
-		coinService = mock(CoinService.class);
+		coinService = mock(ClientService.class);
 		coinRestController = new CoinRestController(coinService);
 		mockCD = mock(CurrencyDetail.class);
 		mockCC = mock(CryptoCurrency.class);

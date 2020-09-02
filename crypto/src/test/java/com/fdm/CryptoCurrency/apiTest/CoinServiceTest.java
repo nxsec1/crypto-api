@@ -10,16 +10,16 @@ import org.junit.Test;
 
 import com.fdm.CryptoCurrency.api.CryptoCurrency;
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
-import com.fdm.CryptoCurrency.service.CoinService;
+import com.fdm.CryptoCurrency.service.ClientService;
 
 
 public class CoinServiceTest {
 	
-	private static CoinService coinService;
+	private static ClientService coinService;
 	
 	@BeforeClass
 	public static void init() {
-		coinService = new CoinService();
+		coinService = new ClientService();
 	}
 	
 	
