@@ -18,6 +18,7 @@ import com.fdm.CryptoCurrency.client.CryptoCurrency;
 import com.fdm.CryptoCurrency.client.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.client.CryptoFeignClient;
 import com.fdm.CryptoCurrency.client.CryptoHistoryDTO;
+import com.fdm.CryptoCurrency.client.StatusUpdate;
 
 @Service
 public class ClientService {
@@ -47,7 +48,7 @@ public class ClientService {
 		HashMap<String, Object> rates = (HashMap<String, Object>) data.get("current_price");
 		HashMap<String, String> current_price = getPrice(rates);
 		cd.setCurrent_price(current_price);
-		
+
 		HashMap<String, Object> changes = (HashMap<String, Object>) data.get("price_change_percentage_24h_in_currency");
 		HashMap<String, String> price_change = getPrice(changes);
 		cd.setPrice_percentage_change_in_24hr(price_change);
@@ -56,8 +57,8 @@ public class ClientService {
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime then = now.minusDays(7);
 		String date = String.format(then.format(format));
-		
-		CryptoHistoryDTO historyDto = client.findHistory(id,date);
+
+		CryptoHistoryDTO historyDto = client.findHistory(id, date);
 		Map<String, Object> historyData = historyDto.getMarket_data();
 		HashMap<String, Object> historyRates = (HashMap<String, Object>) historyData.get("current_price");
 		HashMap<String, String> history_price = getPrice(historyRates);
@@ -75,7 +76,7 @@ public class ClientService {
 		}
 		return price;
 	}
-	
+
 	public String formatDate(String dateString) {
 		LocalDate date = LocalDate.parse(dateString);
 		String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
@@ -83,14 +84,13 @@ public class ClientService {
 	}
 
 	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) {
-		ArrayList<CryptoCurrency> ccs= client.findMarket(currency,per_page,page);
-		
+		ArrayList<CryptoCurrency> ccs = client.findMarket(currency, per_page, page);
+		for (int i = 0; i < ccs.size(); i++) {
+			CryptoCurrency cc = ccs.get(i);
+			Map<String, List<StatusUpdate>> updates = client.findStatusUpdate(cc.getId());
+			cc.setStatusUpdates(updates.get("status_updates"));
+		}
 		return ccs;
 	}
-
-
-
-
-
 
 }

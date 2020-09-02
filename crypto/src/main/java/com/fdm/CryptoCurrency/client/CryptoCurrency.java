@@ -1,7 +1,6 @@
 package com.fdm.CryptoCurrency.client;
-import java.util.ArrayList;
-
-import com.fdm.CryptoCurrency.api.StatusUpdate;
+import java.util.List;
+import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +14,5 @@ public class CryptoCurrency {
 	private String id;
 	private String current_price;
 	private String market_cap;
-	private ArrayList<StatusUpdate> statusUpdates;
+	private List<StatusUpdate> statusUpdates;
 }

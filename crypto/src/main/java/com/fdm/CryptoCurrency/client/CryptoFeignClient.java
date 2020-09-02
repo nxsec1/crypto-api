@@ -1,6 +1,8 @@
 package com.fdm.CryptoCurrency.client;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,5 +21,6 @@ public interface CryptoFeignClient {
 	@GetMapping(value="/coins/markets")
 	ArrayList<CryptoCurrency> findMarket(@RequestParam(name="vs_currency") String currency, @RequestParam(name="per_page") String per_page,@RequestParam(name="page") String page);
 	
-	
+	@GetMapping(value="coins/{id}/status_updates")
+	Map<String, List<StatusUpdate>> findStatusUpdate(@PathVariable String id);
 }

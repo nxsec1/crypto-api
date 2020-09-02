@@ -1,4 +1,4 @@
-package com.fdm.CryptoCurrency.api;
+package com.fdm.CryptoCurrency.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StatusUpdate {
-	private String title;
+	private String user_title;
 	private String description;
 	private String created_at;
 }
