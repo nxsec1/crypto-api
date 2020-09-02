@@ -2,6 +2,8 @@ package com.fdm.CryptoCurrency.client;
 
 import java.util.Map;
 
+import org.json.JSONObject;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,5 +19,5 @@ public class CryptoDetailDTO {
 	private String name;
 	private String genesis_date;
 	private String last_updated;
-	private Map<String, Object> market_data;
+	private JSONObject market_data;
 }

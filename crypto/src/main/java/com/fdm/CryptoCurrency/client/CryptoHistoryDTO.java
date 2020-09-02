@@ -12,5 +12,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CryptoHistoryDTO {
-	private Map<String, Map<String,Double>> market_data;
+	private Map<String, Object> market_data;
 }
