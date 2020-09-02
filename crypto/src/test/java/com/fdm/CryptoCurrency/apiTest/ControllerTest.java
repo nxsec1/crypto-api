@@ -11,9 +11,9 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.springframework.http.HttpStatus;
 
-import com.fdm.CryptoCurrency.Feign.CurrencyFeignClient;
 import com.fdm.CryptoCurrency.api.CryptoCurrency;
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
+import com.fdm.CryptoCurrency.controllers.CoinRestController;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
 import com.fdm.CryptoCurrency.service.CoinService;
@@ -24,13 +24,13 @@ public class ControllerTest {
 	private CoinService coinService;
 	private CurrencyDetail mockCD;
 	private CryptoCurrency mockCC;
-	private CurrencyFeignClient coinFeignController;
+	private CoinRestController coinRestController;
 	
 	
 	@Before
 	public void setUp() throws Exception{
 		coinService = mock(CoinService.class);
-		coinFeignController = new CurrencyFeignClient(coinService);
+		coinRestController = new CoinRestController(coinService);
 		mockCD = mock(CurrencyDetail.class);
 		mockCC = mock(CryptoCurrency.class);
 	}
@@ -43,7 +43,7 @@ public class ControllerTest {
 	@Test
 	public void that_getCurrencyDetail_returns_cd() {
 		when(coinService.getCurrencyDetail("bitcoin")).thenReturn(mockCD);
-		CurrencyDetail cd = coinFeignController.findCurrencyDetail("bitcoin");
+		CurrencyDetail cd = coinRestController.getCurrencyDetail("bitcoin");
 		assertEquals(mockCD,cd);
 	}
 	
@@ -52,19 +52,19 @@ public class ControllerTest {
 		ArrayList<CryptoCurrency> mockCCs = new ArrayList<CryptoCurrency>();
 		mockCCs.add(mockCC);
 		when(coinService.getAll("usd","1")).thenReturn(mockCCs);
-		ArrayList<CryptoCurrency> cryptoCurrencys = coinFeignController.findAll("usd","1");
+		ArrayList<CryptoCurrency> cryptoCurrencys = coinRestController.getAll("usd","1");
 		assertEquals(cryptoCurrencys,mockCCs);
 	}
 	
 	@Test(expected = NotFoundCurrencyException.class)
 	public void that_getAll_notFoundCurrency() throws NotFoundCurrencyException, NotFoundPageException {
-		coinFeignController.findAll("abc","1");
+		coinRestController.getAll("abc","1");
 		
 	}
 	
 	@Test(expected = NotFoundPageException.class)
 	public void that_getAll_notFoundPage() throws Exception {
-		coinFeignController.findAll("aud","11");
+		coinRestController.getAll("aud","11");
 
 	}
 	
