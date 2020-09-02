@@ -13,12 +13,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fdm.CryptoCurrency.api.CurrencyDetail;
-import com.fdm.CryptoCurrency.client.CryptoCurrency;
-import com.fdm.CryptoCurrency.client.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.client.CryptoFeignClient;
-import com.fdm.CryptoCurrency.client.CryptoHistoryDTO;
-import com.fdm.CryptoCurrency.client.StatusUpdate;
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
+import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
+import com.fdm.CryptoCurrency.model.CurrencyDetail;
+import com.fdm.CryptoCurrency.model.StatusUpdate;
 
 @Service
 public class ClientService {
@@ -88,9 +88,9 @@ public class ClientService {
 		for (int i = 0; i < ccs.size(); i++) {
 			CryptoCurrency cc = ccs.get(i);
 			Map<String, List<StatusUpdate>> updates = client.findStatusUpdate(cc.getId());
-			List<StatusUpdate> data = updates.get("status_updates");
-			for (int j = 0; j < data.size(); j++) {
-				StatusUpdate update = data.get(j);
+			List<StatusUpdate> statusData = updates.get("status_updates");
+			for (int j = 0; j < statusData.size(); j++) {
+				StatusUpdate update = statusData.get(j);
 				update.setCreated_at(formatDate(update.getCreated_at().substring(0,10)));
 			}
 			cc.setStatusUpdates(updates.get("status_updates"));

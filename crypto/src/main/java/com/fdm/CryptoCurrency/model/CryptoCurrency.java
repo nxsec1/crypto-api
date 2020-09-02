@@ -1,6 +1,5 @@
-package com.fdm.CryptoCurrency.client;
+package com.fdm.CryptoCurrency.model;
 import java.util.List;
-import java.util.Map;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

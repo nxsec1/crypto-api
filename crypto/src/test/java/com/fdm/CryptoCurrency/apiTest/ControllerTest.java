@@ -11,11 +11,11 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.springframework.http.HttpStatus;
 
-import com.fdm.CryptoCurrency.api.CurrencyDetail;
-import com.fdm.CryptoCurrency.client.CryptoCurrency;
 import com.fdm.CryptoCurrency.controllers.CoinRestController;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
 
 public class ControllerTest {

@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fdm.CryptoCurrency.api.CurrencyDetail;
-import com.fdm.CryptoCurrency.client.CryptoCurrency;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.fdm.CryptoCurrency.client;
+package com.fdm.CryptoCurrency.model;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.fdm.CryptoCurrency.api;
+package com.fdm.CryptoCurrency.model;
 
 import java.util.HashMap;
 

@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
+import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
+import com.fdm.CryptoCurrency.model.StatusUpdate;
+
 @FeignClient(value="cryptodata",url="https://api.coingecko.com/api/v3")
 public interface CryptoFeignClient {
 	
