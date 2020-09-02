@@ -13,8 +13,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fdm.CryptoCurrency.api.CryptoCurrency;
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
+import com.fdm.CryptoCurrency.client.CryptoCurrency;
 import com.fdm.CryptoCurrency.client.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.client.CryptoFeignClient;
 import com.fdm.CryptoCurrency.client.CryptoHistoryDTO;
@@ -83,8 +83,9 @@ public class ClientService {
 	}
 
 	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<CryptoCurrency> ccs= client.findMarket(currency,per_page,page);
+		
+		return ccs;
 	}
 
 

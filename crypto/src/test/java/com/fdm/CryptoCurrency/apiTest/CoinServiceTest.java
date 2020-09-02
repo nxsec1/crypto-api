@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.fdm.CryptoCurrency.api.CryptoCurrency;
 import com.fdm.CryptoCurrency.api.CurrencyDetail;
+import com.fdm.CryptoCurrency.client.CryptoCurrency;
 import com.fdm.CryptoCurrency.service.ClientService;
 
 

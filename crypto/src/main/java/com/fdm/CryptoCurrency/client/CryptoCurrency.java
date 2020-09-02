@@ -1,5 +1,7 @@
-package com.fdm.CryptoCurrency.api;
+package com.fdm.CryptoCurrency.client;
 import java.util.ArrayList;
+
+import com.fdm.CryptoCurrency.api.StatusUpdate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
