@@ -21,12 +21,13 @@ import com.fdm.CryptoCurrency.client.CryptoHistoryDTO;
 public class ClientService {
 
 	private CryptoFeignClient client;
-	
+
 	@Autowired
 	public ClientService(CryptoFeignClient client) {
 		this.client = client;
 	}
 
+	@SuppressWarnings("unchecked")
 	public CurrencyDetail getCurrencyDetail(String id) {
 		CurrencyDetail cd = new CurrencyDetail();
 		CryptoDetailDTO dto = client.findCurrency(id);
@@ -35,51 +36,44 @@ public class ClientService {
 		cd.setName(dto.getName());
 		cd.setGenesis_date(dto.getGenesis_date());
 		cd.setLast_update(dto.getLast_updated());
-		
-		Map<String,Object> data = dto.getMarket_data();
-		JSONObject market_caps = (JSONObject) data.get("market_cap");
-		String market_cap = Long.toString(market_caps.getLong("usd"));
+
+		Map<String, Object> data = dto.getMarket_data();
+		HashMap<String, Long> market_caps = (HashMap<String, Long>) data.get("market_cap");
+		String market_cap = Long.toString(market_caps.get("usd"));
 		cd.setMarket_cap(market_cap);
-		
-		JSONObject rates = (JSONObject) data.get("current_price");
+
+		HashMap<String, Object> rates = (HashMap<String, Object>) data.get("current_price");
 		HashMap<String, String> current_price = getPrice(rates);
 		cd.setCurrent_price(current_price);
 		
-		JSONObject changes = (JSONObject) data.get("price_change_percentage_24h_in_currency");
-		HashMap<String, String> price_change = getPriceChange(changes);
+		HashMap<String, Object> changes = (HashMap<String, Object>) data.get("price_change_percentage_24h_in_currency");
+		HashMap<String, String> price_change = getPrice(changes);
 		cd.setPrice_percentage_change_in_24hr(price_change);
-		
+
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime then = now.minusDays(7);
 		String date = String.format(then.format(format));
+		System.out.println(date);
 		
-//		CryptoHistoryDTO historyDto = client.findHistory(id,date);
+		CryptoHistoryDTO historyDto = client.findHistory(id,date);
+		Map<String, Object> historyData = historyDto.getMarket_data();
+		HashMap<String, Object> historyRates = (HashMap<String, Object>) historyData.get("current_price");
+		HashMap<String, String> history_price = getPrice(historyRates);
+		cd.setLastWeek_price(history_price);
 		return cd;
 	}
-	
-	public HashMap<String, String> getPrice(JSONObject obj) {
+
+	public HashMap<String, String> getPrice(HashMap<String, Object> obj) {
 		List<String> currencies = new ArrayList<>(Arrays.asList("jpy", "aud", "usd"));
 		HashMap<String, String> price = new HashMap<String, String>();
 		for (String currency : obj.keySet()) {
 			if (currencies.contains(currency)) {
-				Double p = obj.getDouble(currency);
-				price.put(currency, String.format("%.2f", p));
+				price.put(currency, obj.get(currency).toString());
 			}
 		}
 		return price;
 	}
-	
-	public HashMap<String, String> getPriceChange(JSONObject obj) {
-		List<String> currencies = new ArrayList<>(Arrays.asList("jpy", "aud", "usd"));
-		HashMap<String, String> price = new HashMap<String, String>();
-		for (String currency : obj.keySet()) {
-			if (currencies.contains(currency)) {
-				price.put(currency, Double.toString(obj.getDouble(currency)));
-			}
-		}
-		return price;
-	}
-	
+
 
 }
