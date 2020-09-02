@@ -19,6 +19,5 @@ public interface CryptoFeignClient {
 	@GetMapping(value="/coins/markets")
 	ArrayList<CryptoCurrency> findMarket(@RequestParam(name="vs_currency") String currency, @RequestParam(name="per_page") String per_page,@RequestParam(name="page") String page);
 	
-	@
 	
 }
