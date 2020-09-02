@@ -1,5 +1,6 @@
 package com.fdm.CryptoCurrency.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -34,8 +35,8 @@ public class ClientService {
 		cd.setId(dto.getId());
 		cd.setSymbol(dto.getSymbol());
 		cd.setName(dto.getName());
-		cd.setGenesis_date(dto.getGenesis_date());
-		cd.setLast_update(dto.getLast_updated());
+		cd.setGenesis_date(formatDate(dto.getGenesis_date()));
+		cd.setLast_update(formatDate(dto.getLast_updated().substring(0, 10)));
 
 		Map<String, Object> data = dto.getMarket_data();
 		HashMap<String, Long> market_caps = (HashMap<String, Long>) data.get("market_cap");
@@ -73,6 +74,12 @@ public class ClientService {
 			}
 		}
 		return price;
+	}
+	
+	public String formatDate(String dateString) {
+		LocalDate date = LocalDate.parse(dateString);
+		String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		return formattedDate;
 	}
 
 
