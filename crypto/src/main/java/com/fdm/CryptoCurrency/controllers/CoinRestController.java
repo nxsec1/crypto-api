@@ -27,7 +27,7 @@ public class CoinRestController {
 	}
 	
 	@GetMapping(value = "coins/markets")
-	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPageException{
+	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPageException{
 		List<String> avaliableCurrencies = new ArrayList<>(Arrays.asList("jpy", "aud","usd"));
 		if(!avaliableCurrencies.contains(currency.toLowerCase())) {
 			throw new NotFoundCurrencyException("Currency Not Found!");

@@ -83,6 +83,7 @@ public class ClientService {
 	}
 
 	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) {
+		System.out.println(currency+per_page+page);
 		ArrayList<CryptoCurrency> ccs = client.findMarket(currency, per_page, page);
 		for (int i = 0; i < ccs.size(); i++) {
 			CryptoCurrency cc = ccs.get(i);
