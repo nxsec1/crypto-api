@@ -1,7 +1,7 @@
 {
     "request": {
         "method": "GET",
-        "url": "/coins/markets?currency=aud&page=1"
+        "url": "/coins/markets?currency=aud&per_page=10&page=1"
     },
     "response": {
         "status": 200,
