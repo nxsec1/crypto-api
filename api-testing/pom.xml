@@ -9,7 +9,6 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>APITesting</name>
-  <!-- FIXME change it to the project's website -->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

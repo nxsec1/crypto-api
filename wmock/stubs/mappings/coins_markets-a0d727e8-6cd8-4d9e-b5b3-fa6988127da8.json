@@ -1,0 +1,32 @@
+{
+  "id" : "a0d727e8-6cd8-4d9e-b5b3-fa6988127da8",
+  "name" : "coins_markets",
+  "request" : {
+    "url" : "/coins/markets?vs_currency=usd&per_page=1&page=1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"id\":\"bitcoin\",\"symbol\":\"btc\",\"name\":\"Bitcoin\",\"image\":\"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579\",\"current_price\":11438.02,\"market_cap\":211353936545,\"market_cap_rank\":1,\"fully_diluted_valuation\":240198492820,\"total_volume\":24975795881,\"high_24h\":11888.0,\"low_24h\":11230.03,\"price_change_24h\":-420.40843246,\"price_change_percentage_24h\":-3.54523,\"market_cap_change_24h\":-8236159093.302674,\"market_cap_change_percentage_24h\":-3.7507,\"circulating_supply\":18478187.0,\"total_supply\":21000000.0,\"max_supply\":21000000.0,\"ath\":19665.39,\"ath_change_percentage\":-41.8368,\"ath_date\":\"2017-12-16T00:00:00.000Z\",\"atl\":67.81,\"atl_change_percentage\":16768.00199,\"atl_date\":\"2013-07-06T00:00:00.000Z\",\"roi\":null,\"last_updated\":\"2020-09-03T02:59:34.945Z\"}]",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:34 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=dbb0ae497dbe1ab8c99bbf6172b2a4b021599102094; expires=Sat, 03-Oct-20 03:01:34 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Cache-Control" : "max-age=60, public, must-revalidate, s-maxage=60",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"55e65e6c729da66a295328355dcbb561\"",
+      "X-Request-Id" : "35dd1851-e215-4df9-8772-24855bdd1f01",
+      "X-Runtime" : "0.037203",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "MISS",
+      "cf-request-id" : "04f382a2b30000df24fea93200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3a178f9cdf24-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "a0d727e8-6cd8-4d9e-b5b3-fa6988127da8",
+  "persistent" : true,
+  "insertionIndex" : 37
+}

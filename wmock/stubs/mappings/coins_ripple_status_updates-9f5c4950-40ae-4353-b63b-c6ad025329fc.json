@@ -1,0 +1,37 @@
+{
+  "id" : "9f5c4950-40ae-4353-b63b-c6ad025329fc",
+  "name" : "coins_ripple_status_updates",
+  "request" : {
+    "url" : "/coins/ripple/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status_updates\":[]}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:14 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=db0c45a032f7f52b5ca54f075c6d84f701599102074; expires=Sat, 03-Oct-20 03:01:14 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Per-Page" : "50",
+      "Total" : "0",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"62e24bb075addc01b0bab271481d3a7e\"",
+      "Cache-Control" : "max-age=0, private, must-revalidate",
+      "X-Request-Id" : "2acfb1ba-ede2-4f33-bab8-6f866ca6f0d5",
+      "X-Runtime" : "0.019198",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "BYPASS",
+      "cf-request-id" : "04f38256b10000df24fea71200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc399de84fdf24-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "9f5c4950-40ae-4353-b63b-c6ad025329fc",
+  "persistent" : true,
+  "scenarioName" : "scenario-5-coins-ripple-status_updates",
+  "requiredScenarioState" : "Started",
+  "newScenarioState" : "scenario-5-coins-ripple-status_updates-2",
+  "insertionIndex" : 30
+}

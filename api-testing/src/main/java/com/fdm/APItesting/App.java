@@ -1,7 +1,6 @@
 package com.fdm.APItesting;
 
-
-public class App 
+public class App
 {
- 
+
 }

@@ -5,29 +5,33 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import com.fdm.CryptoCurrency.api.CryptoCurrency;
-import com.fdm.CryptoCurrency.api.CurrencyDetail;
-import com.fdm.CryptoCurrency.service.CoinService;
+import com.fdm.CryptoCurrency.CryptoCurrencyApplication;
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CurrencyDetail;
+import com.fdm.CryptoCurrency.service.ClientService;
+import org.springframework.test.context.junit4.SpringRunner;
 
-
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = CryptoCurrencyApplication.class)
 public class CoinServiceTest {
 	
-	private static CoinService coinService;
+
+	@Autowired
+	private  ClientService coinService;
+
 	
-	@BeforeClass
-	public static void init() {
-		coinService = new CoinService();
-	}
-	
-	
+
 	@Test
 	public void test_getCurrencyDetail_returns_cd() {
-		CurrencyDetail cd = coinService.getCurrencyDetail("bitcoin");
 		
-		assertEquals("bitcoin",cd.getId());
+		CurrencyDetail cd = coinService.getCurrencyDetail("bitcoin");
+
+		assertEquals("bitcoin", cd.getId());
 		assertNotNull(cd.getSymbol());
 		assertNotNull(cd.getName());
 		assertNotNull(cd.getMarket_cap());
@@ -38,15 +42,15 @@ public class CoinServiceTest {
 		assertNotNull(cd.getLastWeek_price());
 
 	}
-	
+
 	@Test
 	public void test_getAll_returns_ccs() {
-		ArrayList<CryptoCurrency> cryptoCurrencys = coinService.getAll("aud","1");
+		ArrayList<CryptoCurrency> cryptoCurrencys = coinService.getAll("aud", "10", "1");
 		CryptoCurrency cc = cryptoCurrencys.get(0);
-		assertEquals("bitcoin",cc.getId());
+		assertEquals("bitcoin", cc.getId());
 		assertNotNull(cc.getCurrent_price());
 		assertNotNull(cc.getMarket_cap());
 
 	}
-	
+
 }

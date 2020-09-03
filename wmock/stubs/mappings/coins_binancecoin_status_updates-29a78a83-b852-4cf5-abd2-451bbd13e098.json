@@ -1,0 +1,37 @@
+{
+  "id" : "29a78a83-b852-4cf5-abd2-451bbd13e098",
+  "name" : "coins_binancecoin_status_updates",
+  "request" : {
+    "url" : "/coins/binancecoin/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status_updates\":[{\"description\":\"$16,000,000 SXP Airdrop to BNB holders\\r\\n\\r\\nBinance is excited to support the $16,000,000 SXP airdrop program to BNB holders on Binance.com as announced by Swipe last week.\\r\\n\\r\\nThe Binance Ecosystem Reward program aims to provide greater access and awareness to projects within the Binance Ecosystem, of which Swipe is the first.\\r\\n\\r\\nClick the link for full details.\\r\\n\\r\\n➡️  http://bit.ly/SXPairdrop\",\"category\":\"general\",\"created_at\":\"2020-08-21T08:39:56.146Z\",\"user\":\"Darc\",\"user_title\":\"Marketing\",\"pin\":false,\"project\":{\"type\":\"Coin\",\"id\":\"binancecoin\",\"name\":\"Binance Coin\",\"symbol\":\"bnb\",\"image\":{\"thumb\":\"https://assets.coingecko.com/coins/images/825/thumb/binance-coin-logo.png?1547034615\",\"small\":\"https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615\",\"large\":\"https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png?1547034615\"}}}]}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:45 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=d879fb4f48b50cfb5416a0c828f493c2a1599102105; expires=Sat, 03-Oct-20 03:01:45 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Per-Page" : "50",
+      "Total" : "1",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"86726417f22e38bbfea025f1af2ca40d\"",
+      "Cache-Control" : "max-age=0, private, must-revalidate",
+      "X-Request-Id" : "c5b1c84b-a08c-417b-bbaa-7c7538b6d499",
+      "X-Runtime" : "0.027239",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "BYPASS",
+      "cf-request-id" : "04f382d08b0000dfa10e19d200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3a60dc56dfa1-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "29a78a83-b852-4cf5-abd2-451bbd13e098",
+  "persistent" : true,
+  "scenarioName" : "scenario-10-coins-binancecoin-status_updates",
+  "requiredScenarioState" : "scenario-10-coins-binancecoin-status_updates-3",
+  "newScenarioState" : "scenario-10-coins-binancecoin-status_updates-4",
+  "insertionIndex" : 59
+}

@@ -1,0 +1,30 @@
+{
+  "id" : "0903ade7-73e6-4cba-a204-10f489a62d6e",
+  "name" : "coins_market",
+  "request" : {
+    "url" : "/coins/market",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "body" : "{\"error\":\"Could not find coin with the given id\"}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:10 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=d6a9e0e34d7e26e0eb89f552bf0daefc41599102069; expires=Sat, 03-Oct-20 03:01:09 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Vary" : "Accept-Encoding, Origin",
+      "Cache-Control" : "no-cache",
+      "X-Request-Id" : "bcbb3345-12f1-46a4-80ca-6299842d73c6",
+      "X-Runtime" : "0.013173",
+      "CF-Cache-Status" : "EXPIRED",
+      "cf-request-id" : "04f38244940000df24fe945200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3980e934df24-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "0903ade7-73e6-4cba-a204-10f489a62d6e",
+  "persistent" : true,
+  "insertionIndex" : 25
+}

@@ -11,25 +11,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fdm.CryptoCurrency.service.CoinService;
-import com.fdm.CryptoCurrency.api.CryptoCurrency;
-import com.fdm.CryptoCurrency.api.CurrencyDetail;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPageException;
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CurrencyDetail;
+import com.fdm.CryptoCurrency.service.ClientService;
 
 @RestController
 public class CoinRestController {
-	private CoinService coinService;
+	private ClientService clientService;
 	
-
-
 	@Autowired
-	public CoinRestController(CoinService coinService) {
-		this.coinService = coinService;
+	public CoinRestController(ClientService clientService) {
+		this.clientService = clientService;
 	}
 	
 	@GetMapping(value = "coins/markets")
-	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="currency") String currency, @RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPageException{
+	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPageException{
 		List<String> avaliableCurrencies = new ArrayList<>(Arrays.asList("jpy", "aud","usd"));
 		if(!avaliableCurrencies.contains(currency.toLowerCase())) {
 			throw new NotFoundCurrencyException("Currency Not Found!");
@@ -37,7 +35,7 @@ public class CoinRestController {
 		if(Integer.parseInt(page)>10 || Integer.parseInt(page)<1) {
 			throw new NotFoundPageException();
 		}
-		ArrayList<CryptoCurrency> cryptoCurrencys = coinService.getAll(currency,page);
+		ArrayList<CryptoCurrency> cryptoCurrencys = clientService.getAll(currency,per_page,page);
 		return cryptoCurrencys;
 	}
 	
@@ -45,7 +43,7 @@ public class CoinRestController {
 	@GetMapping(value = "/coins/{id}")
 	public CurrencyDetail getCurrencyDetail(@PathVariable String id) {
 		CurrencyDetail currencyDetail = null;
-		currencyDetail = coinService.getCurrencyDetail(id);
+		currencyDetail = clientService.getCurrencyDetail(id);
 		return currencyDetail;
 	}	
 	

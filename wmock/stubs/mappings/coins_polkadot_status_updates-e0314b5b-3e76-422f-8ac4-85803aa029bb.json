@@ -1,0 +1,37 @@
+{
+  "id" : "e0314b5b-3e76-422f-8ac4-85803aa029bb",
+  "name" : "coins_polkadot_status_updates",
+  "request" : {
+    "url" : "/coins/polkadot/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status_updates\":[]}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:02:03 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=d0f97400823ead8a4fbb3f28dff65d6841599102122; expires=Sat, 03-Oct-20 03:02:02 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Per-Page" : "50",
+      "Total" : "0",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"34b68da9a42f98588a9d8bbb1956e535\"",
+      "Cache-Control" : "max-age=0, private, must-revalidate",
+      "X-Request-Id" : "4f4d81e9-d4fe-45ff-8e69-c57a5f2f37ac",
+      "X-Runtime" : "0.020430",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "BYPASS",
+      "cf-request-id" : "04f38311e40000dfa10e20e200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3ac96eecdfa1-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "e0314b5b-3e76-422f-8ac4-85803aa029bb",
+  "persistent" : true,
+  "scenarioName" : "scenario-6-coins-polkadot-status_updates",
+  "requiredScenarioState" : "scenario-6-coins-polkadot-status_updates-4",
+  "newScenarioState" : "scenario-6-coins-polkadot-status_updates-5",
+  "insertionIndex" : 66
+}
