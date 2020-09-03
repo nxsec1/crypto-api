@@ -2,7 +2,7 @@
   "id" : "1b0a823f-3983-4f52-8e18-fa9d1d4ae602",
   "name" : "coins_markets",
   "request" : {
-    "url" : "/coins/markets?per_page=10&vs_currency=usd&page=2",
+    "url" : "/coins/markets?vs_currency=usd&per_page=10&page=2",
     "method" : "GET"
   },
   "response" : {
