@@ -1,0 +1,32 @@
+{
+  "id" : "3296bf50-ae57-48dc-9d7f-71633934b42f",
+  "name" : "coins_itcoin-cash_status_updates",
+  "request" : {
+    "url" : "/coins/itcoin-cash/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "body" : "{\"error\":\"Could not find coin with the given id\"}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 02:58:32 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=de5526c7ccd849b3056e3c9cbcf867d9c1599101912; expires=Sat, 03-Oct-20 02:58:32 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Vary" : "Accept-Encoding, Origin",
+      "Cache-Control" : "no-cache",
+      "X-Request-Id" : "40527b8e-8498-4269-b6f2-fec4e1316abc",
+      "X-Runtime" : "0.005499",
+      "CF-Cache-Status" : "EXPIRED",
+      "cf-request-id" : "04f37fdd270000df24fe836200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc35a83a98df24-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "3296bf50-ae57-48dc-9d7f-71633934b42f",
+  "persistent" : true,
+  "scenarioName" : "scenario-1-coins-itcoin-cash-status_updates",
+  "requiredScenarioState" : "scenario-1-coins-itcoin-cash-status_updates-2",
+  "insertionIndex" : 15
+}

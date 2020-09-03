@@ -1,0 +1,37 @@
+{
+  "id" : "4dc25091-c7c2-4d15-9379-3cfdd9c0331f",
+  "name" : "coins_tether_status_updates",
+  "request" : {
+    "url" : "/coins/tether/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status_updates\":[]}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:44 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=dc39b403ce42c1db153e32d53a698155b1599102103; expires=Sat, 03-Oct-20 03:01:43 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Per-Page" : "50",
+      "Total" : "0",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"b729b0b67ef0300e320d60f556a04741\"",
+      "Cache-Control" : "max-age=0, private, must-revalidate",
+      "X-Request-Id" : "bab5e6af-d01a-4077-b9d1-7dbeadf491f3",
+      "X-Runtime" : "0.009465",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "BYPASS",
+      "cf-request-id" : "04f382c9840000dfa10e107200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3a55a9a8dfa1-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "4dc25091-c7c2-4d15-9379-3cfdd9c0331f",
+  "persistent" : true,
+  "scenarioName" : "scenario-4-coins-tether-status_updates",
+  "requiredScenarioState" : "scenario-4-coins-tether-status_updates-3",
+  "newScenarioState" : "scenario-4-coins-tether-status_updates-4",
+  "insertionIndex" : 51
+}

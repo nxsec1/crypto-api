@@ -14,7 +14,7 @@ import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
 import com.fdm.CryptoCurrency.model.StatusUpdate;
 
-@FeignClient(value="cryptodata",url="wiremock:8080")
+@FeignClient(value="cryptodata",url="wiremock")
 public interface CryptoFeignClient {
 	
 	@GetMapping(value="/coins/{id}")

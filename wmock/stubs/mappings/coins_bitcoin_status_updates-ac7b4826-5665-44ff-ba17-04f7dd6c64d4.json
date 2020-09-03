@@ -1,0 +1,37 @@
+{
+  "id" : "ac7b4826-5665-44ff-ba17-04f7dd6c64d4",
+  "name" : "coins_bitcoin_status_updates",
+  "request" : {
+    "url" : "/coins/bitcoin/status_updates",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status_updates\":[]}",
+    "headers" : {
+      "Date" : "Thu, 03 Sep 2020 03:01:34 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=dbb0ae497dbe1ab8c99bbf6172b2a4b021599102094; expires=Sat, 03-Oct-20 03:01:34 GMT; path=/; domain=.coingecko.com; HttpOnly; SameSite=Lax",
+      "Per-Page" : "50",
+      "Total" : "0",
+      "Vary" : "Accept-Encoding, Origin",
+      "ETag" : "W/\"116f3c6561503d54f370936769eb18e3\"",
+      "Cache-Control" : "max-age=0, private, must-revalidate",
+      "X-Request-Id" : "2384dcf8-afd2-4f7d-b133-cdb2581b4cb5",
+      "X-Runtime" : "0.043235",
+      "Alternate-Protocol" : "443:npn-spdy/2",
+      "CF-Cache-Status" : "BYPASS",
+      "cf-request-id" : "04f382a4050000df24feaa4200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5ccc3a19ac8adf24-MEL",
+      "alt-svc" : "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+    }
+  },
+  "uuid" : "ac7b4826-5665-44ff-ba17-04f7dd6c64d4",
+  "persistent" : true,
+  "scenarioName" : "scenario-2-coins-bitcoin-status_updates",
+  "requiredScenarioState" : "scenario-2-coins-bitcoin-status_updates-2",
+  "newScenarioState" : "scenario-2-coins-bitcoin-status_updates-3",
+  "insertionIndex" : 38
+}
