@@ -1,7 +1,7 @@
 # crypto-api
 
 The crypto-api is using Feign Client to get CryptoCurrency Information. 
-WIREMOCK is used to stub the external URL 
+WIREMOCK is used to stub the external URL:https://api.coingecko.com/api/v3/
 
 # How to run:
 1.  Under this folder, run: docker-compose up --build
