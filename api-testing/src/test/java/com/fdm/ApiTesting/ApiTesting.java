@@ -39,21 +39,21 @@ public class ApiTesting
 
     @Test
     public void test_that_market_is_valid() {
-        get("/coins/markets?currency=aud&per_page=10&page=1").then() .assertThat().statusCode(200);
+        get("/coins/markets?vs_currency=aud&per_page=10&page=1").then() .assertThat().statusCode(200);
     }
 
     @Test
     public void that_market_response_time_below_1000L() {
-        get("/coins/markets?currency=aud&per_page=10&page=1").then().time(lessThan(1000L));
+        get("/coins/markets?vs_currency=aud&per_page=10&page=1").then().time(lessThan(1000L));
     }
 
     @Test
     public void that_market_invaid_with_invalid_cureency() {
-        get("/coins/markets?currency=abc&per_page=10&page=1").then().assertThat().statusCode(404);
+        get("/coins/markets?vs_currency=abc&per_page=10&page=1").then().assertThat().statusCode(404);
     }
     
     @Test
     public void that_market_invaid_with_invalid_page() {
-        get("/coins/markets?currency=aud&per_page=10&page=11").then().assertThat().statusCode(404);
+        get("/coins/markets?vs_currency=aud&per_page=10&page=11").then().assertThat().statusCode(404);
     }
 }
