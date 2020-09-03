@@ -53,7 +53,7 @@ public class ClientService {
 		cd.setPrice_percentage_change_in_24hr(price_change);
 
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime now = LocalDateTime.parse(dto.getLast_updated(),DateTimeFormatter.ISO_DATE_TIME);
 		LocalDateTime then = now.minusDays(7);
 		String date = String.format(then.format(format));
 
