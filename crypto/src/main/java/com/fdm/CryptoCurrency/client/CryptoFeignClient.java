@@ -1,22 +1,21 @@
 package com.fdm.CryptoCurrency.client;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.fdm.CryptoCurrency.model.CryptoCurrency;
+import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
+import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
+import com.fdm.CryptoCurrency.model.StatusUpdate;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fdm.CryptoCurrency.model.CryptoCurrency;
-import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
-import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
-import com.fdm.CryptoCurrency.model.StatusUpdate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 // COMMENT: try to use feign client configuration and feign client error decoder
 //url could be set in the application.properties
-@FeignClient(value="cryptodata",url="http://wiremock:8080")
+@FeignClient(value="cryptodata",url="https://api.coingecko.com/api/v3/")
 public interface CryptoFeignClient {
 	
 	@GetMapping(value="/coins/{id}")

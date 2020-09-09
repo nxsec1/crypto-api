@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="87eb7975-713d-40c3-9358-64aacf1ee2b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/crypto-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/client/CryptoFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/client/CryptoFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/controllers/CoinRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/controllers/CoinRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoDetailDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoHistoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoHistoryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crypto/src/test/java/com/fdm/CryptoCurrency/apiTest/CoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/test/java/com/fdm/CryptoCurrency/apiTest/CoinServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,7 +49,32 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="P:/My Documents/GitHub/caas-forgerock-bff" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/crypto/pom.xml" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CryptoCurrencyApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fdm.CryptoCurrency.CryptoCurrencyApplication" />
+      <module name="CryptoCurrency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fdm.CryptoCurrency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CryptoCurrencyApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -37,10 +87,90 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1599624935472">
+    <state x="233" y="0" key="#Plugins" timestamp="1599654107500">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1599624935472" />
+    <state x="233" y="0" key="#Plugins/0.0.1280.689@0.0.1280.689" timestamp="1599654107500" />
+    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599656922357">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="95" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1599656922357" />
+    <state x="370" y="134" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1599653623659">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="370" y="134" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.689@0.0.1280.689" timestamp="1599653623659" />
+    <state x="421" y="0" key="FileChooserDialogImpl" timestamp="1599658039760">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="0" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1599658039760" />
+    <state width="1029" height="190" key="GridCell.Tab.0.bottom" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state width="1029" height="190" key="GridCell.Tab.0.center" timestamp="1599657822401">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1599657822401" />
+    <state width="1029" height="190" key="GridCell.Tab.0.left" timestamp="1599657822401">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1599657822401" />
+    <state width="1029" height="190" key="GridCell.Tab.0.right" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state width="1029" height="190" key="GridCell.Tab.1.bottom" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state width="1029" height="190" key="GridCell.Tab.1.center" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state width="1029" height="190" key="GridCell.Tab.1.left" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state width="1029" height="190" key="GridCell.Tab.1.right" timestamp="1599657822402">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1029" height="190" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1599657822402" />
+    <state x="56" y="0" key="Maven.ArtifactSearchDialog" timestamp="1599657125566">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="56" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.689@0.0.1280.689" timestamp="1599657125566" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1599658048776">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1599658048776" />
+    <state x="0" y="0" width="719" height="689" key="find.popup" timestamp="1599657219478">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="0" y="0" width="719" height="689" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1599657219478" />
+    <state x="0" y="0" key="new project wizard" timestamp="1599657613769">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1599657613769" />
+    <state x="297" y="155" key="run.anything.popup" timestamp="1599653545103">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="297" y="155" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1599653545103" />
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1599655156890">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1599655156890" />
   </component>
 </project>
