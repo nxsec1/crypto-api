@@ -7,9 +7,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 public class CryptoCurrencyApplication {
-	
-	public static void main(String[] args) {
-		SpringApplication.run(CryptoCurrencyApplication.class, args);
-	}
+
+    public static void main(String[] args) {
+        SpringApplication.run(CryptoCurrencyApplication.class, args);
+    }
 
 }
