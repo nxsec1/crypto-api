@@ -14,7 +14,9 @@ import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
 import com.fdm.CryptoCurrency.model.StatusUpdate;
 
-@FeignClient(value="cryptodata",url="https://api.coingecko.com/api/v3/")
+// COMMENT: try to use feign client configuration and feign client error decoder
+//url could be set in the application.properties
+@FeignClient(value="cryptodata",url="http://wiremock:8080")
 public interface CryptoFeignClient {
 	
 	@GetMapping(value="/coins/{id}")

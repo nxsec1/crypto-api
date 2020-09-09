@@ -17,5 +17,6 @@ public class CryptoDetailDTO {
 	private String name;
 	private String genesis_date;
 	private String last_updated;
+	// COMMENT: can we not use model instead of map?
 	private Map<String, Object> market_data;
 }

@@ -12,5 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CryptoHistoryDTO {
+	// COMMENT: use model instead of map
+
 	private Map<String, Object> market_data;
 }

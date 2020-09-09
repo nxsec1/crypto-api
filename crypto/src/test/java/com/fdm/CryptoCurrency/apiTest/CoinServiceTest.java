@@ -16,6 +16,7 @@ import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
 import org.springframework.test.context.junit4.SpringRunner;
 
+// not using springboot test ,aviod for quicker response
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CryptoCurrencyApplication.class)
 public class CoinServiceTest {

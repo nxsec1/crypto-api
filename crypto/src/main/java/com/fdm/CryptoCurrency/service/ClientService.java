@@ -18,6 +18,7 @@ import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
 import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
 import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.model.StatusUpdate;
+// COMMENT: you need to be careful with putting all method as public
 
 @Service
 public class ClientService {
@@ -32,6 +33,7 @@ public class ClientService {
 	@SuppressWarnings("unchecked")
 	public CurrencyDetail getCurrencyDetail(String id) {
 		CurrencyDetail cd = new CurrencyDetail();
+		// COMMENTS: what happen if coingecko return 404 deal with client
 		CryptoDetailDTO dto = client.findCurrency(id);
 		cd.setId(dto.getId());
 		cd.setSymbol(dto.getSymbol());
@@ -41,6 +43,7 @@ public class ClientService {
 
 		Map<String, Object> data = dto.getMarket_data();
 		HashMap<String, Long> market_caps = (HashMap<String, Long>) data.get("market_cap");
+		// COMMENT: need to get different currency AUD and JPY
 		String market_cap = Long.toString(market_caps.get("usd"));
 		cd.setMarket_cap(market_cap);
 
@@ -65,8 +68,9 @@ public class ClientService {
 		return cd;
 	}
 
-	public HashMap<String, String> getPrice(HashMap<String, Object> obj) {
+	private HashMap<String, String> getPrice(HashMap<String, Object> obj) {
 		List<String> currencies = new ArrayList<>(Arrays.asList("jpy", "aud", "usd"));
+		// COMMENT: put this as global constant
 		HashMap<String, String> price = new HashMap<String, String>();
 		for (String currency : obj.keySet()) {
 			if (currencies.contains(currency)) {
@@ -76,8 +80,9 @@ public class ClientService {
 		return price;
 	}
 
-	public String formatDate(String dateString) {
+	private String formatDate(String dateString) {
 		LocalDate date = LocalDate.parse(dateString);
+		// COMMENT: put the date format as global constant
 		String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 		return formattedDate;
 	}
@@ -88,6 +93,7 @@ public class ClientService {
 		for (int i = 0; i < ccs.size(); i++) {
 			CryptoCurrency cc = ccs.get(i);
 			Map<String, List<StatusUpdate>> updates = client.findStatusUpdate(cc.getId());
+			// COMMENT: try to avoid using map and use POJO model instead
 			List<StatusUpdate> statusData = updates.get("status_updates");
 			for (int j = 0; j < statusData.size(); j++) {
 				StatusUpdate update = statusData.get(j);

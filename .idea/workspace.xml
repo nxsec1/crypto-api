@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="87eb7975-713d-40c3-9358-64aacf1ee2b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/client/CryptoFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/client/CryptoFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/controllers/CoinRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/controllers/CoinRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoHistoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/model/CryptoHistoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/main/java/com/fdm/CryptoCurrency/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crypto/src/test/java/com/fdm/CryptoCurrency/apiTest/CoinServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/crypto/src/test/java/com/fdm/CryptoCurrency/apiTest/CoinServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hG5j2Xo3jWpuQD9eeRc0H3TRc7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="P:/My Documents/GitHub/caas-forgerock-bff" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87eb7975-713d-40c3-9358-64aacf1ee2b2" name="Default Changelist" comment="" />
+      <created>1599624720865</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599624720865</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1599624935472">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1599624935472" />
+  </component>
+</project>
