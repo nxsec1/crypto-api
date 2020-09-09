@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
-import com.fdm.CryptoCurrency.exception.NotFoundPageException;
+import com.fdm.CryptoCurrency.exception.NotFoundPaginationException;
 import com.fdm.CryptoCurrency.model.CryptoCurrency;
 import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
@@ -27,13 +27,13 @@ public class CoinRestController {
 	}
 	
 	@GetMapping(value = "coins/markets")
-	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPageException{
+	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPaginationException{
 		List<String> avaliableCurrencies = new ArrayList<>(Arrays.asList("jpy", "aud","usd"));
 		if(!avaliableCurrencies.contains(currency.toLowerCase())) {
 			throw new NotFoundCurrencyException("Currency Not Found!");
 		}
-		if(Integer.parseInt(page)>10 || Integer.parseInt(page)<1) {
-			throw new NotFoundPageException();
+		if(Integer.parseInt(per_page)>10 || Integer.parseInt(per_page)<1) {
+			throw new NotFoundPaginationException();
 		}
 		ArrayList<CryptoCurrency> cryptoCurrencys = clientService.getAll(currency,per_page,page);
 		return cryptoCurrencys;
@@ -49,12 +49,12 @@ public class CoinRestController {
 	
 	@ExceptionHandler(NotFoundCurrencyException.class)
 	public String notFoundCurrency() {
-		return "Currency Not Found! \nThe availiable currencies are JPY ,AUD , USD. \nTry http://localhost:8080/coins/market instead. \nThanks!";
+		return "Currency Not Found! \nThe availiable currencies are JPY ,AUD , USD. \nTry http://localhost:8080/coins/markets instead. \nThanks!";
 	}
 	
-	@ExceptionHandler(NotFoundPageException.class)
+	@ExceptionHandler(NotFoundPaginationException.class)
 	public String notFoundPage() {
-		return "Page Not Found! \nThe availiable page numbers are [1,10] \nTry http://localhost:8080/coins/market instead. \nThanks!";
+		return "Page Not Found! \nThe availiable pagination numbers are [1,10] \nTry http://localhost:8080/coins/markets instead. \nThanks!";
 	}
 	
 }

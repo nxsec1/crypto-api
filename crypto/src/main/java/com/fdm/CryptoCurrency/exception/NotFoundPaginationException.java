@@ -3,7 +3,7 @@ package com.fdm.CryptoCurrency.exception;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class NotFoundPageException extends Exception {
+public class NotFoundPaginationException extends Exception {
 
 	/**
 	 * 

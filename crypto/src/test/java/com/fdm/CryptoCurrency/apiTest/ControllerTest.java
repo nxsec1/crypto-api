@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import com.fdm.CryptoCurrency.controllers.CoinRestController;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
-import com.fdm.CryptoCurrency.exception.NotFoundPageException;
+import com.fdm.CryptoCurrency.exception.NotFoundPaginationException;
 import com.fdm.CryptoCurrency.model.CryptoCurrency;
 import com.fdm.CryptoCurrency.model.CurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
@@ -46,7 +46,7 @@ public class ControllerTest {
 	}
 	
 	@Test
-	public void that_getAll_returns_all() throws NotFoundCurrencyException, NotFoundPageException {
+	public void that_getAll_returns_all() throws NotFoundCurrencyException, NotFoundPaginationException {
 		ArrayList<CryptoCurrency> mockCCs = new ArrayList<CryptoCurrency>();
 		mockCCs.add(mockCC);
 		when(coinService.getAll("usd","10","1")).thenReturn(mockCCs);
@@ -55,12 +55,12 @@ public class ControllerTest {
 	}
 	
 	@Test(expected = NotFoundCurrencyException.class)
-	public void that_getAll_notFoundCurrency() throws NotFoundCurrencyException, NotFoundPageException {
+	public void that_getAll_notFoundCurrency() throws NotFoundCurrencyException, NotFoundPaginationException {
 		coinRestController.getAll("abc","10","1");
 		
 	}
 	
-	@Test(expected = NotFoundPageException.class)
+	@Test(expected = NotFoundPaginationException.class)
 	public void that_getAll_notFoundPage() throws Exception {
 		coinRestController.getAll("aud","10","11");
 
