@@ -11,7 +11,6 @@ public class ApiTesting
 {
     private static final String BASE_URI = "http://localhost:3000";
 
-
     @BeforeAll
     public void init() {
         baseURI = BASE_URI;
@@ -26,7 +25,7 @@ public class ApiTesting
     public void test_that_api_returns_200_for_valid_currency() {
         get("/coins/bitcoin")
             .then()
-            .assertThat().statusCode(200);
+            .assertThat().statusCode(200).body("name",equalTo("Bitcoin"));
     }
 
 
@@ -39,8 +38,8 @@ public class ApiTesting
         }
 
     @Test
-    public void test_that_market_is_valid() {
-        get("/coins/markets?vs_currency=aud&per_page=10&page=1").then() .assertThat().statusCode(200);
+    public void test_that_market_is_valid_with_10_results() {
+        get("/coins/markets?vs_currency=aud&per_page=10&page=1").then() .assertThat().statusCode(200).body("size()", is(10));;
     }
 
     @Test
