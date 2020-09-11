@@ -20,28 +20,14 @@ public class CoinRestController {
 	}
 	
 	@GetMapping(value = "coins/markets")
-	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws NotFoundCurrencyException, NotFoundPaginationException{
-		// COMMENT: This should be a global constant instead of creating new list everytime the API receive a request
-		// Also you can use enum instead of list
-//		List<String> avaliableCurrencies = new ArrayList<>(Arrays.asList("jpy", "aud","usd"));
-		// COMMENT: I feel like this logic should be in service
-		// controller should not be aware of what currency available
-		// it should only handle routing
-//		if(!avaliableCurrencies.contains(currency.toLowerCase())) {
-//			throw new NotFoundCurrencyException("Currency Not Found!");
-//		}
-//		if(Integer.parseInt(per_page)>10 || Integer.parseInt(per_page)<1) {
-//			throw new NotFoundPaginationException();
-//		}
+	public ArrayList<CryptoCurrency> getAll(@RequestParam(defaultValue = "aud",name="vs_currency") String currency, @RequestParam(defaultValue = "10",name="per_page") String per_page,@RequestParam(defaultValue = "1",name="page") String page) throws Exception {
 		ArrayList<CryptoCurrency> cryptoCurrencys = clientService.getAll(currency,per_page,page);
 		return cryptoCurrencys;
 	}
 	
 
 	@GetMapping(value = "/coins/{id}")
-	public CryptoCurrencyDetail getCurrencyDetail(@PathVariable String id) {
-		// COMMENT: You dont need to assign to null
-//		CryptoCurrencyDetail cryptoCurrencyDetail = null;
+	public CryptoCurrencyDetail getCurrencyDetail(@PathVariable String id) throws Exception {
 		CryptoCurrencyDetail cryptoCurrencyDetail = clientService.getCurrencyDetail(id);
 		return cryptoCurrencyDetail;
 	}	
