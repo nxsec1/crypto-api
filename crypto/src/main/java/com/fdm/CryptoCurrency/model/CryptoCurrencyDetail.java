@@ -15,9 +15,9 @@ public class CryptoCurrencyDetail {
 	private String name;
 	private String genesis_date;
 	private String last_update;
-	private CurrencyPrice market_cap;
-	private CurrencyPrice current_price;
-	private CurrencyPrice price_percentage_change_in_24hr;
-	private CurrencyPrice lastWeek_price;
+	private CurrencyPriceDTO market_cap;
+	private CurrencyPriceDTO current_price;
+	private CurrencyPriceDTO price_percentage_change_in_24hr;
+	private CurrencyPriceDTO lastWeek_price;
 
 }

@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class HistoryMarketData {
-    private CurrencyPrice current_price;
+public class CurrencyPriceDTO {
+    private String aud;
+    private String jpy;
+    private String usd;
 }

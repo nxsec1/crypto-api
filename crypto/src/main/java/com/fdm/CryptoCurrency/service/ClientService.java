@@ -13,7 +13,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-// COMMENT: you need to be careful with putting all method as public
 
 @Service
 public class ClientService {
@@ -21,11 +20,11 @@ public class ClientService {
 	private CryptoFeignClient client;
 	private static final String AUS_DATE_FORMAT = "dd-MM-yyyy";
 	private static final DateTimeFormatter AUS_DATE_FORMATTER = DateTimeFormatter.ofPattern(AUS_DATE_FORMAT);
+
 	@Autowired
 	public ClientService(CryptoFeignClient client) {
 		this.client = client;
 	}
-
 
 	public CryptoCurrencyDetail getCurrencyDetail(String id) throws Exception {
 		new CryptoCurrencyDetail();

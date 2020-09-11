@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CryptoHistoryDTO {
 
-	private HistoryMarketData market_data;
+	private HistoryMarketDataDTO market_data;
 }

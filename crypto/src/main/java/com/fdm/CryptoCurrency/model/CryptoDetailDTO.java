@@ -15,5 +15,5 @@ public class CryptoDetailDTO {
 	private String name;
 	private String genesis_date;
 	private String last_updated;
-	private MarketData market_data;
+	private MarketDataDTO market_data;
 }

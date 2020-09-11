@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CurrencyPrice {
-    private String aud;
-    private String jpy;
-    private String usd;
+public class MarketDataDTO {
+    private CurrencyPriceDTO current_price;
+    private CurrencyPriceDTO market_cap;
+    private CurrencyPriceDTO price_change_24h_in_currency;
 }
