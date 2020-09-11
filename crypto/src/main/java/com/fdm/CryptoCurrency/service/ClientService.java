@@ -1,10 +1,7 @@
 package com.fdm.CryptoCurrency.service;
 
 import com.fdm.CryptoCurrency.client.CryptoFeignClient;
-import com.fdm.CryptoCurrency.model.CryptoCurrency;
-import com.fdm.CryptoCurrency.model.CryptoCurrencyDetail;
-import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
-import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
+import com.fdm.CryptoCurrency.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 // COMMENT: you need to be careful with putting all method as public
 
@@ -44,17 +39,6 @@ public class ClientService {
 		return cd;
 	}
 
-	private HashMap<String, String> getPrice(HashMap<String, Object> obj) {
-		List<String> currencies = new ArrayList<>(Arrays.asList("jpy", "aud", "usd"));
-		// COMMENT: put this as global constant
-		HashMap<String, String> price = new HashMap<String, String>();
-		for (String currency : obj.keySet()) {
-			if (currencies.contains(currency)) {
-				price.put(currency, obj.get(currency).toString());
-			}
-		}
-		return price;
-	}
 
 	private String formatDate(String dateString) {
 		LocalDate date = LocalDate.parse(dateString);
@@ -64,19 +48,17 @@ public class ClientService {
 	}
 
 	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) {
-//		System.out.println(currency+per_page+page);
 		ArrayList<CryptoCurrency> ccs = client.findMarket(currency, per_page, page);
-//		for (int i = 0; i < ccs.size(); i++) {
-//			CryptoCurrency cc = ccs.get(i);
-//			Map<String, List<StatusUpdate>> updates = client.findStatusUpdate(cc.getId());
-//			// COMMENT: try to avoid using map and use POJO model instead
-//			List<StatusUpdate> statusData = updates.get("status_updates");
-//			for (int j = 0; j < statusData.size(); j++) {
-//				StatusUpdate update = statusData.get(j);
-//				update.setCreated_at(formatDate(update.getCreated_at().substring(0,10)));
-//			}
-//			cc.setStatusUpdates(updates.get("status_updates"));
-//		}
+		for (int i = 0; i < ccs.size(); i++) {
+			CryptoCurrency cc = ccs.get(i);
+			StatusUpdateDTO updates = client.findStatusUpdate(cc.getId());
+			List<StatusUpdate> statusData = updates.getStatus_updates();
+			for (int j = 0; j < statusData.size(); j++) {
+				StatusUpdate update = statusData.get(j);
+				update.setCreated_at(formatDate(update.getCreated_at().substring(0,10)));
+			}
+			cc.setStatusUpdates(updates);
+		}
 		return ccs;
 	}
 

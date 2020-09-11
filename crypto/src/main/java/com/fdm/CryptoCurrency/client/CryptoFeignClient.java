@@ -1,17 +1,12 @@
 package com.fdm.CryptoCurrency.client;
 
-import com.fdm.CryptoCurrency.model.CryptoCurrency;
-import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
-import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
-import com.fdm.CryptoCurrency.model.StatusUpdate;
+import com.fdm.CryptoCurrency.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 // COMMENT: try to use feign client configuration and feign client error decoder
 //url could be set in the application.properties
@@ -28,5 +23,5 @@ public interface CryptoFeignClient {
 	ArrayList<CryptoCurrency> findMarket(@RequestParam(name="vs_currency") String currency, @RequestParam(name="per_page") String per_page,@RequestParam(name="page") String page);
 	
 	@GetMapping(value="coins/{id}/status_updates")
-	Map<String, List<StatusUpdate>> findStatusUpdate(@PathVariable String id);
+	StatusUpdateDTO findStatusUpdate(@PathVariable String id);
 }
