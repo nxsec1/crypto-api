@@ -4,6 +4,7 @@ import com.fdm.CryptoCurrency.client.CryptoFeignClient;
 import com.fdm.CryptoCurrency.model.CryptoCurrency;
 import com.fdm.CryptoCurrency.model.CryptoCurrencyDetail;
 import com.fdm.CryptoCurrency.model.CryptoDetailDTO;
+import com.fdm.CryptoCurrency.model.CryptoHistoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,21 +37,10 @@ public class ClientService {
 		LocalDateTime then = now.minusDays(7);
 		String date = String.format(then.format(format));
 
-//		CryptoHistoryDTO historyDto = client.findHistory(id, date);
-//		Sysmtem.out.println(historyDto);
-//		CryptoCurrencyDetail cd = new CryptoCurrencyDetail().builder()
-//				.id(dto.getId()).symbol(dto.getSymbol()).name(dto.getName()).genesis_date(formatDate(dto.getGenesis_date())).last_update(formatDate(dto.getLast_updated().substring(0,10))).current_price(dto.getMarket_data().getCurrent_price()).market_cap(dto.getMarket_data().getMarket_cap()).price_percentage_change_in_24hr(dto.getMarket_data().getPrice_change_24h_in_currency()).lastWeek_price(historyDto.getMarket_data().getCurrent_price()).build();
+		CryptoHistoryDTO historyDto = client.findHistory(id, date);
 
-		CryptoCurrencyDetail cd = new CryptoCurrencyDetail();
-		cd.setId(dto.getId());
-		cd.setSymbol(dto.getSymbol());
-		cd.setName(dto.getName());
-		cd.setGenesis_date(formatDate(dto.getGenesis_date()));
-		cd.setLast_update(formatDate(dto.getLast_updated().substring(0, 10)));
-		cd.setCurrent_price(dto.getMarket_data().getCurrent_price());
-		cd.setMarket_cap(dto.getMarket_data().getMarket_cap());
-		cd.setPrice_percentage_change_in_24hr(dto.getMarket_data().getPrice_change_24h_in_currency());
-//		cd.setLastWeek_price(historyDto.getMarket_data().getCurrent_price());
+		CryptoCurrencyDetail cd = new CryptoCurrencyDetail().builder()
+				.id(dto.getId()).symbol(dto.getSymbol()).name(dto.getName()).genesis_date(formatDate(dto.getGenesis_date())).last_update(formatDate(dto.getLast_updated().substring(0,10))).current_price(dto.getMarket_data().getCurrent_price()).market_cap(dto.getMarket_data().getMarket_cap()).price_percentage_change_in_24hr(dto.getMarket_data().getPrice_change_24h_in_currency()).lastWeek_price(historyDto.getMarket_data().getCurrent_price()).build();
 		return cd;
 	}
 
