@@ -1,22 +1,15 @@
 package com.fdm.CryptoCurrency.model;
 
-import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Builder
+@Data
 public class CryptoDetailDTO {
 	private String id;
 	private String symbol;
 	private String name;
 	private String genesis_date;
 	private String last_updated;
-	// COMMENT: can we not use model instead of map?
-	private Map<String, Object> market_data;
+	private MarketData market_data;
 }

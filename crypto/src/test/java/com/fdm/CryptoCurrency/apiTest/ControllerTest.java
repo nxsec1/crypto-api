@@ -13,14 +13,14 @@ import com.fdm.CryptoCurrency.controllers.CoinRestController;
 import com.fdm.CryptoCurrency.exception.NotFoundCurrencyException;
 import com.fdm.CryptoCurrency.exception.NotFoundPaginationException;
 import com.fdm.CryptoCurrency.model.CryptoCurrency;
-import com.fdm.CryptoCurrency.model.CurrencyDetail;
+import com.fdm.CryptoCurrency.model.CryptoCurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
 
 public class ControllerTest {
 	
 	
 	private ClientService coinService;
-	private CurrencyDetail mockCD;
+	private CryptoCurrencyDetail mockCD;
 	private CryptoCurrency mockCC;
 	private CoinRestController coinRestController;
 	
@@ -29,7 +29,7 @@ public class ControllerTest {
 	public void setUp() throws Exception{
 		coinService = mock(ClientService.class);
 		coinRestController = new CoinRestController(coinService);
-		mockCD = mock(CurrencyDetail.class);
+		mockCD = mock(CryptoCurrencyDetail.class);
 		mockCC = mock(CryptoCurrency.class);
 	}
 	
@@ -41,7 +41,7 @@ public class ControllerTest {
 	@Test
 	public void that_getCurrencyDetail_returns_cd() {
 		when(coinService.getCurrencyDetail("bitcoin")).thenReturn(mockCD);
-		CurrencyDetail cd = coinRestController.getCurrencyDetail("bitcoin");
+		CryptoCurrencyDetail cd = coinRestController.getCurrencyDetail("bitcoin");
 		assertEquals(mockCD,cd);
 	}
 	

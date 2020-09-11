@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fdm.CryptoCurrency.CryptoCurrencyApplication;
 import com.fdm.CryptoCurrency.model.CryptoCurrency;
-import com.fdm.CryptoCurrency.model.CurrencyDetail;
+import com.fdm.CryptoCurrency.model.CryptoCurrencyDetail;
 import com.fdm.CryptoCurrency.service.ClientService;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -30,7 +30,7 @@ public class CoinServiceTest {
 	@Test
 	public void test_getCurrencyDetail_returns_cd() {
 		
-		CurrencyDetail cd = coinService.getCurrencyDetail("bitcoin");
+		CryptoCurrencyDetail cd = coinService.getCurrencyDetail("bitcoin");
 
 		assertEquals("bitcoin", cd.getId());
 		assertNotNull(cd.getSymbol());

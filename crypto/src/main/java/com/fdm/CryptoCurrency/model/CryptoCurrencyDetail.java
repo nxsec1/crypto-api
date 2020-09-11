@@ -1,25 +1,23 @@
 package com.fdm.CryptoCurrency.model;
 
-import java.util.HashMap;
-
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CurrencyDetail{
+@AllArgsConstructor
+public class CryptoCurrencyDetail {
 	private String id;
 	private String symbol;
 	private String name;
-	private String market_cap;
 	private String genesis_date;
 	private String last_update;
-	private HashMap<String, String> current_price;
-	private HashMap<String, String> price_percentage_change_in_24hr;
-	private HashMap<String, String> lastWeek_price;
-
-
+	private CurrencyPrice market_cap;
+	private CurrencyPrice current_price;
+	private CurrencyPrice price_percentage_change_in_24hr;
+	private CurrencyPrice lastWeek_price;
 
 }

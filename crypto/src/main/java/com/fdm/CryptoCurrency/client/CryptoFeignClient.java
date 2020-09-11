@@ -15,7 +15,7 @@ import java.util.Map;
 
 // COMMENT: try to use feign client configuration and feign client error decoder
 //url could be set in the application.properties
-@FeignClient(value="cryptodata",url="https://api.coingecko.com/api/v3/")
+	@FeignClient(value="cryptodata",url="https://api.coingecko.com/api/v3/")
 public interface CryptoFeignClient {
 	
 	@GetMapping(value="/coins/{id}")
