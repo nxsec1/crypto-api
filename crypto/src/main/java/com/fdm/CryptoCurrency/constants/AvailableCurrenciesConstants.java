@@ -4,7 +4,7 @@ import lombok.Getter;
 
 public enum AvailableCurrenciesConstants {
     AUD("aud"),
-    CNY("cny"),
+    JPY("JPY"),
     USD("usd");
 
     @Getter

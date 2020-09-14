@@ -49,16 +49,19 @@ public class ClientService {
 	}
 
 	public ArrayList<CryptoCurrency> getAll(String currency, String per_page, String page) throws Exception {
+
 		try {
 			AvailableCurrenciesConstants currencyName = AvailableCurrenciesConstants.valueOf(currency.toUpperCase());
 			currency = currencyName.value();
 		} catch (IllegalArgumentException ex) {
 			throw new NotFoundCurrencyException(currency+" Currency Not Found!");
 		}
+
 		if(Integer.parseInt(per_page) < 1 || Integer.parseInt(per_page) > 10) {
 			throw new NotFoundPaginationException(per_page+"Pagination Not Found! The pagination should be [1,10].");
 		}
 		ArrayList<CryptoCurrency> ccs;
+
 		try {
 			ccs = client.findMarket(currency, per_page, page);
 			for (int i = 0; i < ccs.size(); i++) {
