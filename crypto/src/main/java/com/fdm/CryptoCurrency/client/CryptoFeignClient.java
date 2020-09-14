@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 // COMMENT: try to use feign client configuration and feign client error decoder
 //url could be set in the application.properties
-	@FeignClient(value="cryptodata",url="${external-api.url}")
+	@FeignClient(value="cryptodata",url="${external-api.url}",configuration = FeignClientConfiguration.class)
 public interface CryptoFeignClient {
 	
 	@GetMapping(value="/coins/{id}")

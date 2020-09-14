@@ -56,7 +56,7 @@ public class ClientService {
 			throw new NotFoundCurrencyException(currency+" Currency Not Found!");
 		}
 		if(Integer.parseInt(per_page) < 1 || Integer.parseInt(per_page) > 10) {
-			throw new NotFoundPaginationException();
+			throw new NotFoundPaginationException(per_page+"Pagination Not Found! The pagination should be [1,10].");
 		}
 		ArrayList<CryptoCurrency> ccs;
 		try {
