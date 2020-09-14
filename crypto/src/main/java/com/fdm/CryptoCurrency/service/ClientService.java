@@ -58,16 +58,21 @@ public class ClientService {
 		if(Integer.parseInt(per_page) < 1 || Integer.parseInt(per_page) > 10) {
 			throw new NotFoundPaginationException();
 		}
-		ArrayList<CryptoCurrency> ccs = client.findMarket(currency, per_page, page);
-		for (int i = 0; i < ccs.size(); i++) {
-			CryptoCurrency cc = ccs.get(i);
-			StatusUpdateDTO updates = client.findStatusUpdate(cc.getId());
-			List<StatusUpdate> statusData = updates.getStatus_updates();
-			for (int j = 0; j < statusData.size(); j++) {
-				StatusUpdate update = statusData.get(j);
-				update.setCreated_at(formatDate(update.getCreated_at().substring(0,10)));
+		ArrayList<CryptoCurrency> ccs;
+		try {
+			ccs = client.findMarket(currency, per_page, page);
+			for (int i = 0; i < ccs.size(); i++) {
+				CryptoCurrency cc = ccs.get(i);
+				StatusUpdateDTO updates = client.findStatusUpdate(cc.getId());
+				List<StatusUpdate> statusData = updates.getStatus_updates();
+				for (int j = 0; j < statusData.size(); j++) {
+					StatusUpdate update = statusData.get(j);
+					update.setCreated_at(formatDate(update.getCreated_at().substring(0, 10)));
+				}
+				cc.setStatusUpdates(updates);
 			}
-			cc.setStatusUpdates(updates);
+		}catch (FeignException e) {
+			throw new NotFoundCurrencyException(currency + " Currency Not Found!");
 		}
 		return ccs;
 	}
